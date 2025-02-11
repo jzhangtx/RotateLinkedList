@@ -62,7 +62,7 @@ func GetNodeByIndex(head *ListNode, index int) *ListNode {
 	return head
 }
 
-func CountList(head *ListNode) (int, *ListNode) {
+func CountListMoveToTail(head *ListNode) (int, *ListNode) {
 	count := 1
 	for ; head.next != nil; head = head.next {
 		count++
@@ -72,7 +72,7 @@ func CountList(head *ListNode) (int, *ListNode) {
 }
 
 func RotateListByK(head *ListNode, k int) *ListNode {
-	count, pTail := CountList(head)
+	count, pTail := CountListMoveToTail(head)
 	k = k % count
 
 	if k != 0 {
